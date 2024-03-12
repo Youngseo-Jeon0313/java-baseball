@@ -7,5 +7,8 @@ public class Application {
         /*
          * 변경 가능한 부분에 대해 고민 !!
          */
+
+        Game game = new Game(new Player(), new Referee());
+        game.run();
     }
 }
