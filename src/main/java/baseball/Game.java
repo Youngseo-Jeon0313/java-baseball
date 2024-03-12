@@ -1,9 +1,10 @@
 package baseball;
 
-import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
+
+import static baseball.Constants.*;
 
 public class Game {
     // TODO
@@ -23,7 +24,7 @@ public class Game {
     public void run(){
         System.out.println("숫자 야구 게임을 시작합니다.");
         while (true){
-            ArrayList<Integer> numList = getRandomNumbers();
+            ArrayList<Integer> gameNumList = getRandomNumbers();
 
             requestNumbers();
             //player에게 입력을 받는다. -> Player 객체 사용
@@ -39,8 +40,8 @@ public class Game {
      */
     public ArrayList<Integer> getRandomNumbers(){
         ArrayList<Integer> numList = new ArrayList<>();
-        while (numList.size() < 3){
-            int randomNum = Randoms.pickNumberInRange(1,9);
+        while (numList.size() < GAME_RANDOM_COUNT){
+            int randomNum = Randoms.pickNumberInRange(GAME_RANDOM_NUM_MIN,GAME_RANDOM_NUM_MAX);
             if (!numList.contains(randomNum)){
                 numList.add(randomNum);
             }
